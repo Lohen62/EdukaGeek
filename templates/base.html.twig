@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EdukaGeek - {% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        
+        {% block nav %}
+            <header>
+                <div class="container">
+                    <img src="http://placehold.it/350x150" alt="un logo" class="logo">
+
+                    <div class="titre">
+                        <p>Vous etes sur la page :{% block titrepage %}{% endblock %}</p>
+                    </div>
+                </div>
+            </header>   
+
+              {% if accueil == false %}
+                    {% if user == "eleve" %}
+                        <nav class="connection">
+
+                            <li>Avatar</li>
+                            <li>nom</li>
+                            <li>Niveau</li>
+                            <li>classe</li>
+                            <li>Historique</li>
+                            <li>Se deconnecter</li>
+                        </nav>
+                      
+                    {% elseif user == "prof" %}
+
+                        <nav class="connection">
+                            <li>PROFISSEUR SAN</li>
+                            <li>nom</li>
+                            <li>Niveau</li>
+                            <li>classe</li>
+                            <li>Historique</li>
+                            <li>Se deconnecter</li>
+                        </nav>
+                         
+                    {% else  %}
+
+                        <nav class="connection">
+                            <li>ADMINISTRATEUR SAMA DELBOJE</li>
+                            <li>nom</li>
+                            <li>Niveau</li>
+                            <li>classe</li>
+                            <li>Historique</li>
+                            <li>Se deconnecter</li>
+                        </nav>
+                        
+                    {% endif %}
+
+                    
+                <nav class="connection">
+                <li>mon profil</li>
+                <li>bonsoir</li>
+                </nav>
+              {% endif %}
+              
+             
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
